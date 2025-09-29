@@ -39,10 +39,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         // edge-to-edge表示対応
         enableEdgeToEdge(SystemBarStyle.auto(Color.TRANSPARENT, Color.TRANSPARENT) { true })
-        // API26未満はenableEdgeToEdge()によって透過できないので黒に戻す
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-            window.navigationBarColor = ContextCompat.getColor(this, android.R.color.black)
-        }
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
